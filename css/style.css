@@ -634,7 +634,7 @@ ul, li {
 .l_box img {width:140px;display:inline;float:left;margin-top:-40px;}
 .l_box span {display:inline-block;margin:0 20px;float:left;}
 .l_box p {float:left;font-weight:12px;}
-.con_bg.perfor_con{min-height: 1200px;background: url(../images/bg_3.jpg) no-repeat;background-size: 100% 100%;}
+.con_bg.perfor_con{min-height: 1200px;background-size: 100% 100%;}
 .main{padding-top:400px;}
 .p_left{float: left;width:390px;padding:0 0 0 30px;padding-bottom: 30px;}
 .p_tit{width: 360px;height: 104px;font-size: 24px;padding:60px 0 0 110px;background: url(../images/p_1.png) no-repeat;}
