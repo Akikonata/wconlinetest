@@ -344,97 +344,24 @@
             return !!document.createElementNS &&
             !!document.createElementNS(SVG_NS, 'svg').createSVGRect;
         }
-        //获取数据
-        $.ajax({
-            url: 'data/horizon/HorizonData.json',
-            dataType: 'json',
-            success: function(data){
-                var d = data;
-                //排列成员框中的内容
-                var $menber_list = $("#member-list");
-                var $position_selector = $("#position-selector");
-                var $contry_all = $("#contry-all");
-                var filter = {
-                    contry:null,
-                    position:null
-                };               
-                var filterMenbers = function(){
-                    var series = d.series;
-                    var itemlist = [];
-                    $menber_list.empty().width(20);
-                    var pos = filter.position;
-                    for(var key in series){
-                        if(filter.contry&&key!==filter.contry)continue;
-                        var serie = series[key];
-                        for(var i=0;i<serie.length;i++){
-                            if(serie[i].position===pos||!pos){
-                                var $item = $('<li><div class="name" data-name="'+serie[i].name+'">'+serie[i].name.replace(/·/g,"<br/>·<br/>")+'</div></li>');
-                                    itemlist.push($item);
-                            }
-                        }
-                    }
-                    return itemlist;
-                };
-                //在列表中列出成员
-                var listTimeout;
-                var listMembers = function(){
-                    //停止正在进行的append行为
-                    if(listTimeout)clearTimeout(listTimeout);
-                    var members = filterMenbers();
-                    var idx = 0;
-                    var step = 50;
-                    var appendMember = function(){
-                        for(var i=idx;i<members.length&&i<(idx+step);i++){
-                            var _w = $menber_list.width();
-                            var $item = members[i];
-                                $menber_list.append($item);
-                                $menber_list.width(_w + $item.width());
-                        }
-                        idx+=step;
-                        if(idx<members.length){
-                            listTimeout = setTimeout(appendMember,0);
-                        }
-                    };
-                    appendMember();
-                };
-                listMembers();
-                $("#contry_selector").on('click','li',function(){
-                    $contry_all[0].checked=false;
-                    $contry_all.parent().removeClass('r_on');
-                    var $this = $(this);
-                    $this.siblings().removeClass('active');
-                    $this.addClass('active');
-                    var val = $this.find('p').text();
-                    filter.contry = val;
-                    listMembers();
-                }); 
-                $contry_all.on('change',this,function(){
-                    $("#contry_selector").find('li').removeClass('active');
-                    filter.contry = null;
-                    listMembers();
-                });
-                if(!hasSVG()){
-                    //IE8兼容方案
-                    $position_selector.remove();
-                    $(".pos").remove();
-                    $("#member-list-title").html('您正在使用低端浏览器，<a href="http://liulanqi.baidu.com" target="_blank">点击下载百度浏览器,体验动感大数据</a>');
-                    $($menber_list.find('li')[0]).addClass('active');
-                    var chart = $("#chart");
-                    chart.html('<img src="images/data/all.png"/>');
-                    $("#contry_selector").on('click','li',function(){
-                        chart.html('<img src="images/data/'+filter.contry+'.png"/>');
-                    });
-                    $contry_all.on('change',this,function(){
-                        chart.html('<img src="images/data/all.png"/>');
-                    });
-                }else{
-                    $.getScript("kity/kity.all.min.js",function(){
-                        $.getScript("dest/kitycharts.min.js",function(){
+        var curmode = 'circle';
+        var curgender = 'men';
+        if (!hasSVG()){
+            //IE8兼容方案
+
+        } else {
+            $.getScript("kity/kity.all.min.js",function(){
+                $.getScript("dest/kitycharts.min.js",function(){                    
+                    $.ajax({
+                        url: 'data/horizon/HorizonData.json',
+                        dataType: 'json',
+                        success: function( data ) {
                             var colors = ["#148ad4","#148ad4","#00ae25","#00ae25","#0cbebe","#0cbebe","#f6b37f","#f6b37f"];
                             var chart = new kc.HorizonChart('chart',{colors:colors,padding:[30,30,20,50]});
-                            console.log(chart);
+                            d = data;
                             chart.getData().update(d);
-                            chart.showLines(filter);
+                            var $menber_list = $("#member-list");
+                            var $position_selector = $("#position-selector");
                             $menber_list.on('click','li',function(e){
                                 e.stopPropagation();
                                 var $this = $(this);
@@ -445,17 +372,74 @@
                                     name:name
                                 });
                             });
+                            //控制球员列表选项的变量
+                            var filter = {
+                                contry:null,
+                                position:null
+                            }
                             //复写tooltipUpdated方法
                             chart.toolTipUpdated = function(){
                                 chart.showLines(filter);
                             };
-                            //选择国家
-                            $("#contry_selector").on('click','li',function(){
+                            //球员列表筛选以及表格中显示线段的筛选
+                            var filterLines = function(){
                                 chart.showLines(filter);
+                                var series = d.series;
+                                var itemlist = [];
+                                $menber_list.empty().width(20);
+                                var pos = filter.position;
+                                for(var key in series){
+                                    if(filter.contry&&key!==filter.contry)continue;
+                                    var serie = series[key];
+                                    for(var i=0;i<serie.length;i++){
+                                        if(serie[i].position===pos||!pos){
+                                            var $item = $('<li><div class="name" data-name="'+serie[i].name+'">'+serie[i].name.replace(/·/g,"<br/>·<br/>")+'</div></li>');
+                                            itemlist.push($item);
+                                        }
+                                    }
+                                }
+                                return itemlist;
+                            };
+                            //在列表中显示球员
+                            var listTimeout;
+                            var listMembers = function(){
+                                //停止正在进行的append行为
+                                if(listTimeout)clearTimeout(listTimeout);
+                                var members = filterLines();
+                                var idx = 0;
+                                var step = 50;
+                                var appendMember = function(){
+                                    for(var i=idx;i<members.length&&i<(idx+step);i++){
+                                        var _w = $menber_list.width();
+                                        var $item = members[i];
+                                        $menber_list.append($item);
+                                        $menber_list.width(_w + $item.width());
+                                    }
+                                    idx+=step;
+                                    if(idx<members.length){
+                                        listTimeout = setTimeout(appendMember,0);
+                                    }
+                                };
+                                appendMember();
+                            }
+                            listMembers();
+                            //选择国家
+                            var $contry_all = $("#contry-all");
+                            $("#contry_selector").on('click','li',function(){
+                                $contry_all[0].checked=false;
+                                $contry_all.parent().removeClass('r_on');
+                                var $this = $(this);
+                                $this.siblings().removeClass('active');
+                                $this.addClass('active');
+                                var val = $this.find('p').text();
+                                filter.contry = val;
+                                listMembers();
                                 chart.unhighlightAll();
                             });
                             $contry_all.on('change',this,function(){
-                                chart.showLines(filter);
+                                $("#contry_selector").find('li').removeClass('active');
+                                filter.contry = null;
+                                listMembers();
                                 chart.unhighlightAll();
                             });
                             //选择位置
@@ -469,11 +453,11 @@
                                 listMembers();
                                 chart.unhighlightAll();
                             });
-                        });
+                        }
                     });
-                }
-            }
-        });
+                });  
+            });
+        }
     </script>
 </body>
 </html>
