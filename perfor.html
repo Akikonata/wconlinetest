@@ -1,0 +1,465 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <title>世界杯</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">    
+</head>
+<body class="">
+    <div  class="top_section">      
+        <div class="top_tit"><img src="images/s_t_2.png"></div>
+        <div class="top_logo"><img src="images/top-2.png"></div>
+        <div class="menu">
+            <div id="navigation" class="nav-collapse page-sliderbar">
+                <ul class="navbar-nav" id="menu-js">
+                <li><a href="http://tieba.baidu.com/f?ie=utf-8&kw=%E4%B8%96%E7%95%8C%E6%9D%AF&fr=search" target="_blank">世界杯贴吧</a></li>
+                    <li><a href="comic.html">看球攻略+</a>
+                        <ul class="dropdown-menu sub-menu media-hide">
+                            <li><a href="force.html"><span>百度大数据</span></a></li>                            
+                        </ul>
+                    </li>
+                    <!-- <li><a href="perfor.html">球员表现</a></li> -->
+                    <!-- <li><a href="wait.html">世界杯进程</a></li> -->
+                    <li><a href="index.html">吧友百态+</a>
+                        <ul class="dropdown-menu sub-menu media-hide">
+                             <li><a href="map.html"><span>地图</span></a></li>
+                             <li><a href="index.html"><span>70 80 90</span></a></li>
+                             <li><a href="wait.html"><span>伪球迷</span></a></li>
+                             <li><a href="wait.html"><span>帅哥球星</span></a></li>
+                             <li><a href="wait.html"><span>球迷生活</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="javascript:;"id="menubadge"class="menuButton btn-navbar collapsed menuButton" data-toggle="collapse" data-target=".nav-collapse"></a>
+        </div>
+    </div>
+    <div class="contentWrap">        
+        <div class="con_bg perfor_con"> 
+            <div class="main">
+                <div class="p_left">
+                    <div class="p_tit">球员表现大数据</div>
+                    <div class="p_x clearfix">
+                        <span class="country">选择国家：</span>
+                        <span class="pos">选择位置：</span>
+                    </div>
+                    <div class="country_list clearfix">
+                        <div  class="coun_l" id='contry-list'>
+                            <!--<label class="label_top"><input type="radio" value='all' id='contry-all'>全部</label>-->
+                            <div class="label_top"> 
+                                <label class="label_radio" for="contry-all">
+                                    <input name="sample-checkbox-01" type="radio" id='contry-all' checked/> 全部
+                                </label>
+                            </div>
+                            <ul class="ico_coun_list clearfix" id='contry_selector'>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_1.jpg"></span>
+                                        <p>巴西</p>
+                                        <i class="c1 op1"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_2.jpg"></span>
+                                        <p>克罗地亚</p>
+                                        <i class="c1 op2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_3.jpg"></span>
+                                        <p>墨西哥</p>
+                                        <i class="c1 op3"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_4.jpg"></span>
+                                        <p>喀麦隆</p>
+                                        <i class="c1 op4"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_5.jpg"></span>
+                                        <p>西班牙</p>
+                                        <i class="c2 op1"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_6.jpg"></span>
+                                        <p>荷兰</p>
+                                        <i class="c2 op2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_7.jpg"></span>
+                                        <p>智利</p>
+                                        <i class="c2 op3"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_8.jpg"></span>
+                                        <p>澳大利亚</p>
+                                        <i class="c2 op4"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_9.jpg"></span>
+                                        <p>哥伦比亚</p>
+                                        <i class="c3 op1"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_10.jpg"></span>
+                                        <p>希腊</p>
+                                        <i class="c3 op2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_11.jpg"></span>
+                                        <p>日本</p>
+                                        <i class="c3 op3"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_12.jpg"></span>
+                                        <p>科特迪瓦</p>
+                                        <i class="c3 op4"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_13.jpg"></span>
+                                        <p>英格兰</p>
+                                        <i class="c4 op1"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_14.jpg"></span>
+                                        <p>意大利</p>
+                                        <i class="c4 op2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_15.jpg"></span>
+                                        <p>乌拉圭</p>
+                                        <i class="c4 op3"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_16.jpg"></span>
+                                        <p>哥斯达黎加</p>
+                                        <i class="c4 op4"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_17.jpg"></span>
+                                        <p>法国</p>
+                                        <i class="c5 op1"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_18.jpg"></span>
+                                        <p>瑞士</p>
+                                        <i class="c5 op2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_19.jpg"></span>
+                                        <p>厄瓜多尔</p>
+                                        <i class="c5 op3"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_20.jpg"></span>
+                                        <p>洪都拉斯</p>
+                                        <i class="c5 op4"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_21.jpg"></span>
+                                        <p>阿根廷</p>
+                                        <i class="c6 op1"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_22.jpg"></span>
+                                        <p>伊朗</p>
+                                        <i class="c6 op2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_23.jpg"></span>
+                                        <p>波黑</p>
+                                        <i class="c6 op3"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_24.jpg"></span>
+                                        <p>尼日利亚</p>
+                                        <i class="c6 op4"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_25.jpg"></span>
+                                        <p>德国</p>
+                                        <i class="c7 op1"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_26.jpg"></span>
+                                        <p>葡萄牙</p>
+                                        <i class="c7 op2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_27.jpg"></span>
+                                        <p>美国</p>
+                                        <i class="c7 op3"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_28.jpg"></span>
+                                        <p>加纳</p>
+                                        <i class="c7 op4"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_29.jpg"></span>
+                                        <p>比利时</p>
+                                        <i class="c8 op1"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_30.jpg"></span>
+                                        <p>俄罗斯</p>
+                                        <i class="c8 op2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_31.jpg"></span>
+                                        <p>阿尔及利亚</p>
+                                        <i class="c8 op3"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <span><img src="images/country/coun_32.jpg"></span>
+                                        <p>韩国</p>
+                                        <i class="c8 op4"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="coun_r">
+                            <div class="po_label" id='position-selector'>                                
+                                <label class="label_radio" id="label_top" for="radio-01">
+                                	<input type="radio"name="p" id="radio-01" value="all" checked/> 全部
+                                </label>
+                                <label class="label_radio" for="radio-02">
+                                    <input type="radio" name="p"id="radio-02" value='守门员'> 守门员
+                                </label>
+                                <label class="label_radio" for="radio-03">
+                                    <input type="radio" name="p" id="radio-03"value='前锋'> 前锋
+                                </label>
+                                <label class="label_radio" for="radio-04">
+                                    <input type="radio" name="p"id="radio-04" value='中场'> 中场
+                                </label>
+                                <label class="label_radio" for="radio-05">
+                                    <input type="radio" name="p"id="radio-05" value='后卫'> 后卫
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p_rig">
+                    <div id="chart" style='height:450px'></div>
+                    <h3 id="member-list-title">点击球员名字查看详情：</h3>
+                    <div id='member-list-container'>
+                        <ul id='member-list'>
+                            
+                        </ul>
+                    </div>
+                    <!-- <div style='width:1em'>梅赫迪·穆斯塔法<span>Mehdi MOSTEFA</span></div> -->
+                </div>
+                <div class="l_box">
+                    <img src="images/cy_logo.png"><span>|</span>
+                </div>
+            </div>           
+            <div class="explan_box">                        
+                <div class="con">
+                    <div class="msg_btn">信息图详细说明>></div>
+                    <div class="colse"></div>
+                    <div class="msg_box">
+                        <h2>信息图详细说明</h2>
+                        <p>“球员表现大数据”互动信息图希望用图形化的方式，将球员们的技术统计数据从枯燥的表格转化为直观的图形，以此来展现球员的技术特征。<br/>
+我们从众多的统计数据中，选择了我们认为最能表现球员特点的11项数据，加上从百度大数据中获取的球员热度（搜索和贴吧），组成了这张信息图。<br/>
+该图囊括了本届世界杯的736名球员（32支球队×23名球员），同时提供了筛选功能，你可以按照国家和位置来筛选想要看到的球员数据，点击图下方的球员姓名可以显示该球员各项指标的详细数据。<br/>
+数据来源：百度Moments数据库，国际足联（FIFA）官方网站</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js?v=1.8.3"></script>
+    <script type="text/javascript" src="js/index.js?v=2014"></script>
+    <script>
+        var hasSVG = function(){
+            SVG_NS = "http://www.w3.org/2000/svg";
+            return !!document.createElementNS &&
+            !!document.createElementNS(SVG_NS, 'svg').createSVGRect;
+        }
+        var curmode = 'circle';
+        var curgender = 'men';
+        if (!hasSVG()){
+            //IE8兼容方案
+
+        } else {
+            $.getScript("kity/kity.all.min.js",function(){
+                $.getScript("dest/kitycharts.min.js",function(){                    
+                    $.ajax({
+                        url: 'data/horizon/HorizonData.json',
+                        dataType: 'json',
+                        success: function( data ) {
+                            var colors = ["#148ad4","#148ad4","#00ae25","#00ae25","#0cbebe","#0cbebe","#f6b37f","#f6b37f"];
+                            var chart = new kc.HorizonChart('chart',{colors:colors,padding:[30,30,20,50]});
+                            d = data;
+                            chart.getData().update(d);
+                            var $menber_list = $("#member-list");
+                            var $position_selector = $("#position-selector");
+                            $menber_list.on('click','li',function(e){
+                                e.stopPropagation();
+                                var $this = $(this);
+                                $this.siblings().removeClass('active');
+                                $this.addClass('active');
+                                var name = $(this).find('.name').text();
+                                chart.highlightLines({
+                                    name:name
+                                });
+                            });
+                            //控制球员列表选项的变量
+                            var filter = {
+                                contry:null,
+                                position:null
+                            }
+                            //复写tooltipUpdated方法
+                            chart.toolTipUpdated = function(){
+                                chart.showLines(filter);
+                            };
+                            //球员列表筛选以及表格中显示线段的筛选
+                            var filterLines = function(){
+                                chart.showLines(filter);
+                                var series = d.series;
+                                var itemlist = [];
+                                $menber_list.empty().width(20);
+                                var pos = filter.position;
+                                for(var key in series){
+                                    if(filter.contry&&key!==filter.contry)continue;
+                                    var serie = series[key];
+                                    for(var i=0;i<serie.length;i++){
+                                        if(serie[i].position===pos||!pos){
+                                            var $item = $('<li><div class="name">'+serie[i].name+'</div></li>');
+                                            itemlist.push($item);
+                                        }
+                                    }
+                                }
+                                return itemlist;
+                            };
+                            //在列表中显示球员
+                            var listTimeout;
+                            var listMembers = function(){
+                                //停止正在进行的append行为
+                                if(listTimeout)clearTimeout(listTimeout);
+                                var members = filterLines();
+                                var idx = 0;
+                                var step = 50;
+                                var appendMember = function(){
+                                    for(var i=idx;i<members.length&&i<(idx+step);i++){
+                                        var _w = $menber_list.width();
+                                        var $item = members[i];
+                                        $menber_list.append($item);
+                                        $menber_list.width(_w + $item.width());
+                                    }
+                                    idx+=step;
+                                    if(idx<members.length){
+                                        listTimeout = setTimeout(appendMember,0);
+                                    }
+                                    // else{
+                                    //     $($menber_list.find('li')[0]).click();
+                                    // }
+                                };
+                                appendMember();
+                            }
+                            listMembers();
+                            //选择国家
+                            var $contry_all = $("#contry-all");
+                            $("#contry_selector").on('click','li',function(){
+                                $contry_all[0].checked=false;
+                                $contry_all.parent().removeClass('r_on');
+                                var $this = $(this);
+                                $this.siblings().removeClass('active');
+                                $this.addClass('active');
+                                var val = $this.find('p').text();
+                                filter.contry = val;
+                                listMembers();
+                                chart.unhighlightAll();
+                            });
+                            $contry_all.on('change',this,function(){
+                                $("#contry_selector").find('li').removeClass('active');
+                                filter.contry = null;
+                                listMembers();
+                                chart.unhighlightAll();
+                            });
+                            //选择位置
+                            $position_selector.on("change","input[type='radio']",function(){
+                                var val = $(this).val();
+                                if(val==="all"){
+                                    filter.position = null;
+                                } else{
+                                    filter.position = $(this).val();
+                                }
+                                listMembers();
+                                chart.unhighlightAll();
+                            });
+                        }
+                    });
+                });  
+            });
+        }
+    </script>
+</body>
+</html>
+
