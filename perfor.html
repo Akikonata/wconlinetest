@@ -365,7 +365,7 @@
                                 var $this = $(this);
                                 $this.siblings().removeClass('active');
                                 $this.addClass('active');
-                                var name = $(this).find('.name').text();
+                                var name = $(this).find('.name').data("name");
                                 chart.highlightLines({
                                     name:name
                                 });
@@ -391,7 +391,7 @@
                                     var serie = series[key];
                                     for(var i=0;i<serie.length;i++){
                                         if(serie[i].position===pos||!pos){
-                                            var $item = $('<li><div class="name">'+serie[i].name+'</div></li>');
+                                            var $item = $('<li><div class="name" data-name="'+serie[i].name+'">'+serie[i].name.replace(/·/g,"<br/>·<br/>")+'</div></li>');
                                             itemlist.push($item);
                                         }
                                     }
