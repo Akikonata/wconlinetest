@@ -43,8 +43,7 @@ em {
 .con_bg {
     height:840px;
     position:relative;
-    background:#e9e8e6 url(../images/section_bg.jpg) no-repeat;
-    background-size:100% 100%;
+    background:#e9e8e6;
 }
 .top_section {
     position:relative;
@@ -635,8 +634,7 @@ ul, li {
 .l_box span {display:inline-block;margin:0 20px;float:left;}
 .l_box p {float:left;font-weight:12px;}
 .con_bg.perfor_con{min-height: 1200px;background-size: 100% 100%;}
-.main{padding-top:400px;}
-.p_left{float: left;width:390px;padding:0 0 0 30px;padding-bottom: 30px;}
+.p_left{position: absolute;width:390px;padding:0 0 0 30px;padding-bottom: 30px;}
 .p_tit{width: 360px;height: 104px;font-size: 24px;padding:60px 0 0 110px;background: url(../images/p_1.png) no-repeat;}
 .p_rig{margin-left: 390px;padding-top: 100px;;z-index:99; position:relative;}
 .p_x{border-bottom: 1px solid #9a9ca2;padding-bottom: 10px;padding-top: 20px;}
