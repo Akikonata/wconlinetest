@@ -52,7 +52,7 @@ $(function(){
 			e.preventDefault();
 		});
 	}
-	if(document.hasOwnProperty("ontouchstart")){
+	if(document.hasOwnProperty&&document.hasOwnProperty("ontouchstart")){
 		handleSidebarMenu();
 	}
 
